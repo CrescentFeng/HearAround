@@ -1,0 +1,10 @@
+# Copy to render.yaml only after accepting the selected paid plan.
+services:
+  - type: web
+    name: hearound
+    runtime: docker
+    plan: 1c-2g
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: "10000"

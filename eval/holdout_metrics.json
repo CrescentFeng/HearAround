@@ -1,0 +1,75 @@
+{
+  "evaluation_type": "independent_license_cleared_holdout_frozen_policy",
+  "policy_version": "1-frozen-before-holdout",
+  "clips": 23,
+  "source_level_independence": true,
+  "exact_match": 0.6522,
+  "negative_false_alerts": 0,
+  "negative_clips": 6,
+  "critical_misses": 2,
+  "critical_clips": 6,
+  "latency_ms": {
+    "mean": 9.5,
+    "median": 7.19,
+    "p95": 7.4,
+    "max": 72.9
+  },
+  "per_class": {
+    "fire_alarm": {
+      "support": 3,
+      "tp": 2,
+      "fp": 0,
+      "fn": 1,
+      "precision": 1.0,
+      "recall": 0.6667,
+      "f1": 0.8
+    },
+    "emergency_siren": {
+      "support": 3,
+      "tp": 2,
+      "fp": 0,
+      "fn": 1,
+      "precision": 1.0,
+      "recall": 0.6667,
+      "f1": 0.8
+    },
+    "car_horn": {
+      "support": 3,
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "baby_crying": {
+      "support": 2,
+      "tp": 1,
+      "fp": 0,
+      "fn": 1,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667
+    },
+    "doorbell": {
+      "support": 3,
+      "tp": 0,
+      "fp": 0,
+      "fn": 3,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "knocking": {
+      "support": 3,
+      "tp": 1,
+      "fp": 0,
+      "fn": 2,
+      "precision": 1.0,
+      "recall": 0.3333,
+      "f1": 0.5
+    },
+    "macro_f1": 0.6278
+  },
+  "warning": "Small license-cleared hackathon holdout; not a population benchmark, medical claim, or safety certification."
+}

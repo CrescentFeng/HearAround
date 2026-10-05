@@ -1,0 +1,20 @@
+{
+  "test_type": "sequential_inference_stress_no_threshold_tuning",
+  "cycles": 10,
+  "clips_per_cycle": 23,
+  "total_inferences": 230,
+  "elapsed_seconds": 1.665,
+  "throughput_inferences_per_second": 138.107,
+  "latency_ms": {
+    "mean": 7.24,
+    "p50": 7.4,
+    "p95": 7.79,
+    "p99": 8.04,
+    "max": 92.31
+  },
+  "python_tracemalloc_peak_mb": 0.69,
+  "errors": [],
+  "inconsistent_clip_outputs": [],
+  "passed": true,
+  "note": "This checks repeated sequential inference stability; browser microphone permission and wall-clock endurance remain separate acceptance tests."
+}

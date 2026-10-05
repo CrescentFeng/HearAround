@@ -1,0 +1,48 @@
+version: 1
+policies:
+  fire_alarm:
+    severity: critical
+    min_score: 0.25
+    required_hits: 1
+    window_count: 2
+    cooldown_seconds: 15
+    vibration: [700, 220, 250, 220, 700]
+  emergency_siren:
+    severity: critical
+    min_score: 0.25
+    required_hits: 1
+    window_count: 2
+    cooldown_seconds: 15
+    vibration: [700, 240, 700]
+  car_horn:
+    severity: urgent
+    min_score: 0.30
+    required_hits: 2
+    immediate_score: 0.90
+    window_count: 3
+    cooldown_seconds: 10
+    vibration: [220, 140, 220, 140, 220]
+  baby_crying:
+    severity: urgent
+    min_score: 0.30
+    required_hits: 2
+    immediate_score: 0.90
+    window_count: 3
+    cooldown_seconds: 10
+    vibration: [220, 140, 600]
+  doorbell:
+    severity: attention
+    min_score: 0.35
+    required_hits: 2
+    immediate_score: 0.35
+    window_count: 4
+    cooldown_seconds: 8
+    vibration: [250, 170, 250]
+  knocking:
+    severity: attention
+    min_score: 0.35
+    required_hits: 2
+    immediate_score: 0.65
+    window_count: 4
+    cooldown_seconds: 8
+    vibration: [180, 220, 180]

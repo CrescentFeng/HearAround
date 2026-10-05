@@ -1,0 +1,1 @@
+"""HearAround backend application."""

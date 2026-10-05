@@ -1,0 +1,56 @@
+{
+  "name": "HearAround",
+  "tagline": "Important sounds, made visible.",
+  "version": "0.6.0",
+  "submission_date": "2026-10-03",
+  "challenge": "ML Empowerment Build Challenge 3.0",
+  "primary_users": [
+    "people who are Deaf or hard of hearing",
+    "older adults with age-related hearing loss",
+    "people with limited literacy who benefit from pictograms and speech",
+    "caregivers supporting these users"
+  ],
+  "product_events": [
+    "smoke_or_fire_alarm",
+    "emergency_siren",
+    "car_horn",
+    "baby_crying",
+    "doorbell",
+    "knocking"
+  ],
+  "model": {
+    "name": "YAMNet",
+    "ontology": "AudioSet 521",
+    "agent_pattern": "single safety-first stateful agent",
+    "emergency_decision": "deterministic policy, not free-form LLM judgment"
+  },
+  "evaluation": {
+    "demo_clips": 20,
+    "holdout_clips": 23,
+    "holdout_exact_match_percent": 65.2,
+    "holdout_macro_f1_percent": 62.8,
+    "hard_negative_false_alerts": "0/6",
+    "critical_misses": "2/6",
+    "known_primary_failure": "doorbell recall 0/3",
+    "sequential_inferences": 230,
+    "stress_test_exceptions": 0,
+    "stress_test_output_drift": 0
+  },
+  "privacy": {
+    "raw_audio_persisted": false,
+    "microphone_buffer_seconds": 5,
+    "event_metadata_only": true,
+    "microphone_requires_user_action": true
+  },
+  "claims": {
+    "medical_device": false,
+    "safety_certified": false,
+    "replacement_for_emergency_equipment": false,
+    "population_level_accuracy": false
+  },
+  "links": {
+    "live_demo": "[LIVE_DEMO_URL]",
+    "repository": "[REPOSITORY_URL]",
+    "demo_video": "[VIDEO_URL]"
+  }
+}

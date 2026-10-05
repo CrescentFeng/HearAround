@@ -1,0 +1,21 @@
+clip_id,expected,predicted,top_label,top_score,model_ms,latency_ms,exact_match,event_scores
+fire_nfpa,fire_alarm,,Telephone,0.5962133407592773,107,107,False,emergency_siren=0.0429:0/2;fire_alarm=0.0002:0/2;car_horn=0.0073:0/3;baby_crying=0.0000:0/3;doorbell=0.0000:0/4;knocking=0.0000:0/4
+fire_smoke_alarm,fire_alarm,fire_alarm,Fire alarm,0.9691550135612488,9,9,True,fire_alarm=0.9909:2/2;emergency_siren=0.2203:0/2;car_horn=0.0209:0/3;baby_crying=0.0012:0/3;doorbell=0.0001:0/4;knocking=0.0000:0/4
+siren_whelen,emergency_siren,emergency_siren,Siren,0.6812609434127808,10,10,True,emergency_siren=0.8858:2/2;fire_alarm=0.0000:0/2;car_horn=0.0000:0/3;baby_crying=0.0000:0/3;doorbell=0.0000:0/4;knocking=0.0000:0/4
+siren_police_us,emergency_siren,emergency_siren,Emergency vehicle,0.791157066822052,10,10,True,emergency_siren=0.5740:2/2;fire_alarm=0.0000:0/2;car_horn=0.0008:0/3;baby_crying=0.0000:0/3;doorbell=0.0000:0/4;knocking=0.0000:0/4
+horn_car_cc0,car_horn,car_horn,"Vehicle horn, car horn, honking",0.5187265872955322,8,8,True,car_horn=0.9419:1/3;emergency_siren=0.0000:0/2;fire_alarm=0.0000:0/2;baby_crying=0.0009:0/3;doorbell=0.0000:0/4;knocking=0.0000:0/4
+horn_postauto,car_horn,,"Vehicle horn, car horn, honking",0.227276012301445,11,11,False,emergency_siren=0.0110:0/2;fire_alarm=0.0003:0/2;car_horn=0.1139:0/3;baby_crying=0.0010:0/3;doorbell=0.0000:0/4;knocking=0.0000:0/4
+baby_newborn,baby_crying,baby_crying,"Crying, sobbing",0.5272765159606934,10,10,True,baby_crying=0.9959:3/3;emergency_siren=0.0000:0/2;fire_alarm=0.0000:0/2;car_horn=0.0000:0/3;doorbell=0.0000:0/4;knocking=0.0000:0/4
+baby_disappointed,baby_crying,baby_crying,"Crying, sobbing",0.6828538179397583,9,9,True,baby_crying=0.4717:2/3;emergency_siren=0.0001:0/2;fire_alarm=0.0000:0/2;car_horn=0.0000:0/3;doorbell=0.0000:0/4;knocking=0.0000:0/4
+doorbell_classic,doorbell,doorbell,Alarm clock,0.4827593266963959,7,7,True,doorbell=0.3874:1/4;fire_alarm=0.0126:0/2;emergency_siren=0.0000:0/2;car_horn=0.0029:0/3;baby_crying=0.0000:0/3;knocking=0.0000:0/4
+doorbell_electronic,doorbell,car_horn,"Vehicle horn, car horn, honking",0.20224271714687347,8,8,False,car_horn=0.9358:1/3;emergency_siren=0.1603:0/2;fire_alarm=0.0044:0/2;baby_crying=0.0032:0/3;doorbell=0.0608:0/4;knocking=0.0000:0/4
+doorbell_simple,doorbell,,Music,0.211954265832901,6,6,False,fire_alarm=0.0012:0/2;emergency_siren=0.0006:0/2;car_horn=0.0031:0/3;baby_crying=0.0000:0/3;doorbell=0.0094:0/4;knocking=0.0005:0/4
+doorbell_rings,doorbell,doorbell,Mallet percussion,0.37408187985420227,8,8,True,doorbell=0.3618:1/4;emergency_siren=0.0000:0/2;fire_alarm=0.0000:0/2;car_horn=0.0000:0/3;baby_crying=0.0000:0/3;knocking=0.0000:0/4
+knock_wood,knocking,knocking,Silence,0.5032914876937866,9,9,True,knocking=0.6898:1/4;fire_alarm=0.0000:0/2;emergency_siren=0.0000:0/2;baby_crying=0.0001:0/3;car_horn=0.0000:0/3;doorbell=0.0000:0/4
+knock_knocker,knocking,knocking,Knock,0.5503778457641602,6,6,True,knocking=0.8837:2/4;fire_alarm=0.0000:0/2;emergency_siren=0.0000:0/2;car_horn=0.0000:0/3;baby_crying=0.0000:0/3;doorbell=0.0000:0/4
+negative_baby_laugh,,,"Crying, sobbing",0.5464308261871338,9,9,True,emergency_siren=0.0000:0/2;fire_alarm=0.0000:0/2;baby_crying=0.7319:1/3;car_horn=0.0000:0/3;doorbell=0.0000:0/4;knocking=0.0000:0/4
+negative_baby_rattle,,,Coin (dropping),0.5370804667472839,5,5,True,emergency_siren=0.0000:0/2;fire_alarm=0.0000:0/2;car_horn=0.0015:0/3;baby_crying=0.0000:0/3;knocking=0.0008:0/4;doorbell=0.0000:0/4
+negative_kitchen,,,Vehicle,0.3232361376285553,9,9,True,emergency_siren=0.0020:0/2;fire_alarm=0.0001:0/2;car_horn=0.0101:0/3;baby_crying=0.0000:0/3;knocking=0.0000:0/4;doorbell=0.0000:0/4
+negative_morse,,,Silence,0.6082757711410522,9,9,True,fire_alarm=0.0000:0/2;emergency_siren=0.0000:0/2;car_horn=0.0000:0/3;baby_crying=0.0000:0/3;doorbell=0.0055:0/4;knocking=0.0000:0/4
+mixed_doorbell_baby,baby_crying|doorbell,,"Crying, sobbing",0.4805734157562256,9,9,False,emergency_siren=0.0000:0/2;fire_alarm=0.0000:0/2;baby_crying=0.5787:1/3;car_horn=0.0000:0/3;doorbell=0.0000:0/4;knocking=0.0000:0/4
+mixed_fire_knock,fire_alarm|knocking,fire_alarm,Fire alarm,0.9774812459945679,9,9,False,fire_alarm=0.9980:2/2;emergency_siren=0.0979:0/2;car_horn=0.0129:0/3;baby_crying=0.0009:0/3;doorbell=0.0001:0/4;knocking=0.0000:0/4

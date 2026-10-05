@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07171d">
+  <meta name="description" content="HearAround turns important environmental sounds into clear, accessible, multimodal alerts.">
+  <title>HearAround - Environmental Sound Agent</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%2307171d'/%3E%3Cpath d='M19 34c0-11 6-19 15-19 8 0 14 6 14 14 0 7-4 10-8 13-3 2-4 4-4 7' fill='none' stroke='%234ee0c1' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M19 42c5 0 8-3 8-8' fill='none' stroke='%23f5b84b' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/assets/app.css?v=0.6.0">
+</head>
+<body data-view="simple">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand" aria-label="HearAround">
+        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#123038"/><path d="M19 34c0-11 6-19 15-19 8 0 14 6 14 14 0 7-4 10-8 13-3 2-4 4-4 7" fill="none" stroke="#4ee0c1" stroke-width="6" stroke-linecap="round"/><path d="M19 42c5 0 8-3 8-8" fill="none" stroke="#f5b84b" stroke-width="5" stroke-linecap="round"/></svg>
+        <div><div class="brand-name">HearAround</div><div class="brand-note">Environmental Sound Agent</div></div>
+      </div>
+      <div class="top-actions">
+        <div class="view-switch" role="group" aria-label="Interface mode">
+          <button class="switch-option active" data-view-option="simple" aria-pressed="true">Simple mode</button>
+          <button class="switch-option" data-view-option="technical" aria-pressed="false">Technical mode</button>
+        </div>
+        <select id="environmentMode" aria-label="Environment mode"><option value="home">Home mode</option><option value="outdoor">Outdoor mode</option><option value="sleep">Sleep mode</option></select>
+        <button class="ghost-button" id="speechToggle" aria-pressed="false">Speech: off</button>
+        <button class="ghost-button" id="contrastToggle" aria-pressed="false">High contrast</button>
+      </div>
+    </header>
+
+    <section class="intro">
+      <div><p class="eyebrow">IMPORTANT SOUNDS, MADE VISIBLE</p><h1>Know what is happening around you.</h1><p>HearAround detects meaningful environmental sounds, applies safety-first rules, and turns them into clear alerts using large pictograms, vibration, short messages, and optional speech.</p></div>
+      <div class="privacy-chip"><strong>Privacy by default</strong><span>Raw audio is analyzed in memory and is never saved.</span></div>
+    </section>
+
+    <div class="system-banner" id="systemBanner" role="status" aria-live="polite">
+      <span class="status-light pending" id="statusLight"></span>
+      <div><strong id="systemTitle">Checking the recognition service</strong><span id="systemDetail">Uploaded audio is sent to the HearAround backend for analysis.</span></div>
+      <button class="text-button" id="loadModelButton" hidden>Load model</button>
+    </div>
+
+    <main id="main">
+      <section class="workspace" aria-label="HearAround sound recognition workspace">
+        <aside class="panel scenario-list">
+          <div class="panel-head"><div><h2 class="panel-title">Sound scenarios</h2><div class="panel-sub">Preview six alert experiences</div></div><span class="preview-badge">Interaction preview</span></div>
+          <div class="scenarios" id="scenarios"></div>
+          <div class="input-box">
+            <div class="input-heading"><span aria-hidden="true">🎧</span><div><strong>Real AI recognition</strong><span>Listen live or upload up to 30 seconds of audio</span></div></div>
+            <div class="live-box" id="liveBox">
+              <div class="live-status"><span class="live-dot" id="liveDot"></span><div><strong id="liveTitle">Live monitoring is off</strong><span id="liveDetail">Audio stays only in a five-second memory buffer</span></div></div>
+              <button class="primary full" id="liveToggle" aria-pressed="false">Start live monitoring</button>
+            </div>
+            <div class="demo-samples">
+              <label for="demoAssetSelect">Built-in licensed samples</label>
+              <select id="demoAssetSelect" disabled><option>Loading sample catalog…</option></select>
+              <button class="secondary full" id="loadDemoAsset" disabled>Load this sample</button>
+              <div class="sample-attribution" id="sampleAttribution" hidden></div>
+            </div>
+            <div class="input-divider"><span>or upload your own file</span></div>
+            <label class="file-label" id="fileLabel">Choose an audio file<input id="audioUpload" type="file" accept="audio/wav,audio/flac,audio/ogg,.wav,.flac,.ogg"></label>
+            <div class="file-status" id="fileStatus" aria-live="polite">No file selected</div>
+            <audio id="audioPreview" controls hidden></audio>
+            <button class="primary full" id="analyzeButton" disabled>Analyze sound</button>
+          </div>
+        </aside>
+
+        <section class="panel main-monitor">
+          <div class="monitor-head"><div class="listening"><span class="pulse"></span><span id="monitorState">Waiting for sound input</span></div><time class="timestamp" id="clock">--:--:--</time></div>
+          <div class="wave-wrap" aria-label="Illustrative audio waveform"><div class="wave-grid"></div><div class="wave" id="wave" aria-hidden="true"></div><div class="analysis-state" id="analysisState"><div><div class="loader"></div><strong>Analyzing the audio segment</strong><span>Decode → YAMNet → safety policy → Agent</span></div></div></div>
+          <div class="empty-state" id="emptyState"><div class="empty-icon" aria-hidden="true">👂</div><h2>Start listening or choose a sound</h2><p>Microphone, built-in samples, and uploaded files all run the real model.</p></div>
+          <div class="alert-card" id="alertCard" hidden role="status" aria-live="assertive">
+            <div class="alert-symbol" id="alertSymbol" aria-hidden="true">🚪</div>
+            <div class="alert-content">
+              <div class="alert-top"><span class="severity-mark" id="severityMark"></span><span class="severity" id="severity">Attention</span><span class="source-badge" id="sourceBadge">Interaction preview</span></div>
+              <h2 id="alertTitle">Someone may be at the door</h2><p class="alert-desc" id="alertDesc">Check the door only when it is safe to do so.</p>
+              <div class="action-box"><strong>What you can do now</strong><span id="actionText">Check the door or a door camera.</span></div>
+              <div class="confidence technical-only"><span>Model score</span><strong id="confidence">-</strong><small>not probability-calibrated</small></div>
+            </div>
+          </div>
+          <div class="model-strip technical-only" id="candidates"></div>
+          <div class="confirm-row" id="confirmRow" hidden><button class="primary" id="confirmButton">Got it</button><button class="secondary" id="incorrectButton">Wrong sound</button><button class="secondary" id="speakButton">Read alert aloud</button></div>
+        </section>
+
+        <aside class="panel agent-panel technical-only">
+          <div class="panel-head"><div><h2 class="panel-title">Agent decision trail</h2><div class="panel-sub">Verifiable evidence only</div></div><span class="single-agent">Single Agent</span></div>
+          <div class="trace" id="trace"></div>
+          <div class="boundary"><b>Safety boundary:</b> Deterministic rules trigger critical alerts. The Agent integrates evidence, suppresses duplicates, and personalizes the experience, but it cannot block an emergency alert.</div>
+        </aside>
+      </section>
+
+      <section class="lower">
+        <div class="panel"><div class="panel-head"><div><h2 class="panel-title">Recent sound events</h2><div class="panel-sub">Event metadata only — raw audio is not saved</div></div><button class="ghost-button" id="clearEvents">Clear history</button></div><div class="timeline" id="timeline"><div class="timeline-empty">No events in this session yet.</div></div></div>
+        <div class="panel technical-only"><div class="panel-head"><div><h2 class="panel-title">Implementation evidence</h2><div class="panel-sub">System boundaries judges can verify</div></div></div><div class="evidence"><div class="metric"><strong>6 classes</strong><span>Core environmental sound events</span></div><div class="metric"><strong id="demoCount">20 clips</strong><span>Traceable licensed demo clips</span></div><div class="metric"><strong id="holdoutCount">--</strong><span>Independent-source holdout clips</span></div><div class="metric"><strong id="holdoutF1">--</strong><span>Frozen-policy holdout Macro-F1</span></div><div class="metric"><strong id="falseAlertCount">--</strong><span>Hard-negative false alerts</span></div><div class="metric"><strong id="stressCount">--</strong><span>Sequential inference stability</span></div></div><div class="evidence-note" id="evaluationNote">Holdout evaluation is separate from demo assets. This small set is not a population benchmark or safety certification.</div></div>
+      </section>
+      <section class="compat-panel panel technical-only" aria-labelledby="compatTitle"><div class="panel-head"><div><h2 class="panel-title" id="compatTitle">Browser capabilities</h2><div class="panel-sub">Pre-deployment check · visual alerts remain available without enhancements</div></div></div><div class="compat-grid"><div><span class="compat-dot" id="secureDot"></span><strong>Secure context</strong><small id="secureStatus">Checking</small></div><div><span class="compat-dot" id="micDot"></span><strong>Microphone capture</strong><small id="micStatus">Checking</small></div><div><span class="compat-dot" id="vibrationDot"></span><strong>Vibration alert</strong><small id="vibrationStatus">Checking</small></div><div><span class="compat-dot" id="speechDot"></span><strong>Speech output</strong><small id="speechStatus">Checking</small></div></div><p class="compat-note" id="compatNote">Microphone permission is requested only after you press “Start live monitoring.”</p></section>
+      <section class="notice-grid"><article><span aria-hidden="true">🔒</span><div><strong>Privacy design</strong><p>Audio is used only for the current analysis and is not written to event history. Corrections retain only the label, event ID, and time.</p></div></article><article><span aria-hidden="true">⚠️</span><div><strong>Product boundary</strong><p>Experimental assistive technology — not a medical device, fire alarm, or certified emergency system.</p></div></article></section>
+    </main>
+    <footer class="footer"><span>HearAround · ML Empowerment Build Challenge 3.0</span><span>Sound model: YAMNet AudioSet 521 · Safety policy: HearAround Policy v1</span></footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/assets/app.js?v=0.6.0" defer></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+fastapi>=0.115,<1
+uvicorn[standard]>=0.34,<1
+python-multipart>=0.0.20,<1
+numpy>=1.26,<3
+scipy>=1.12,<2
+soundfile>=0.12,<1
+tensorflow>=2.17,<3
+tensorflow-hub>=0.16,<1
+PyYAML>=6,<7
+# tensorflow-hub 0.16 still imports pkg_resources, removed in newer setuptools.
+setuptools<81

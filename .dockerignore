@@ -1,0 +1,11 @@
+.git
+.venv
+.cache
+__pycache__
+*.py[cod]
+.DS_Store
+data/source
+eval/source
+eval/holdout_audio
+eval/holdout_results.csv
+tmp

@@ -1,0 +1,33 @@
+version: 1
+events:
+  fire_alarm:
+    display_name: Fire or smoke alarm
+    labels:
+      - Fire alarm
+      - Smoke detector, smoke alarm
+  emergency_siren:
+    display_name: Emergency vehicle siren
+    labels:
+      - Siren
+      - Police car (siren)
+      - Ambulance (siren)
+      - Fire engine, fire truck (siren)
+  car_horn:
+    display_name: Car horn
+    labels:
+      - Vehicle horn, car horn, honking
+      - Air horn, truck horn
+  baby_crying:
+    display_name: Baby crying
+    labels:
+      - Baby cry, infant cry
+      - Crying, sobbing
+  doorbell:
+    display_name: Doorbell
+    labels:
+      - Doorbell
+      - Ding-dong
+  knocking:
+    display_name: Knocking
+    labels:
+      - Knock

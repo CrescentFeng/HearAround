@@ -1,0 +1,14 @@
+services:
+  hearound:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    environment:
+      PORT: "8000"
+    volumes:
+      - yamnet-cache:/app/.cache/tfhub
+    restart: unless-stopped
+
+volumes:
+  yamnet-cache:
