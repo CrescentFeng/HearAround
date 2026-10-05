@@ -1,6 +1,6 @@
 # HearAround — Important sounds, made visible
 
-> Replace `[LIVE_DEMO_URL]`, `[REPOSITORY_URL]`, and `[VIDEO_URL]` before submission.
+> Replace `[LIVE_DEMO_URL]` and `[VIDEO_URL]` before submission.
 
 ## One-line pitch
 
@@ -113,7 +113,7 @@ Accessible AI is a communication system, not only a classifier. A modest model w
 ## Project links
 
 - Live demo: [LIVE_DEMO_URL]
-- Source repository: [REPOSITORY_URL]
+- Source repository: https://github.com/CrescentFeng/HearAround
 - Demo video: [VIDEO_URL]
 
 ## Safety boundary

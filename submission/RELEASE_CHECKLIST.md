@@ -8,24 +8,24 @@ The Devpost overview and official-rules pages currently show different deadlines
 
 ## Required submission content
 
-- [ ] Eligibility is confirmed for the entrant/team.
+- [x] Eligibility is confirmed for the entrant/team.
 - [ ] Project title and one-line pitch are entered.
 - [ ] Detailed description covers problem, solution, features, technology, and target users.
 - [ ] At least one screenshot, video, or project file is attached.
-- [ ] Public repository link is inserted, with license and setup instructions.
+- [x] Public repository link is inserted, with license and setup instructions.
 - [ ] Public HTTPS demo link is inserted and does not require evaluator credentials.
 - [ ] Two-to-three-minute demo video is uploaded and captions are enabled.
-- [ ] `[LIVE_DEMO_URL]`, `[REPOSITORY_URL]`, and `[VIDEO_URL]` are replaced everywhere.
+- [ ] `[LIVE_DEMO_URL]` and `[VIDEO_URL]` are replaced everywhere.
 
 ## Code release gates
 
-- [ ] `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -v` passes.
-- [ ] Production container builds without using a local bind mount.
-- [ ] Container `/api/health` returns 200.
+- [x] `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -v` passes (20/20 on 2026-10-05).
+- [x] Production container builds without using a local bind mount.
+- [x] Container `/api/health` returns 200 in local container acceptance.
 - [ ] Model loads in the deployed environment and survives one service restart with cache enabled.
 - [ ] One built-in sample completes real inference from the public hostname.
-- [ ] Holdout WAV files are absent from public/static/container paths.
-- [ ] Raw audio is absent from event-history and feedback payloads.
+- [x] Holdout WAV files are absent from public/static/container paths.
+- [x] Raw audio is absent from event-history and feedback payloads.
 - [ ] Browser console has no uncaught errors during the review path.
 
 ## Device acceptance

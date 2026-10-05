@@ -1,6 +1,6 @@
 # HearAround deployment and acceptance
 
-Updated: 2026-10-03
+Updated: 2026-10-05
 
 ## Production shape
 
@@ -12,12 +12,16 @@ The public deployment must sit behind a managed HTTPS reverse proxy. Browsers al
 
 HearAround cannot be shipped as a static-only site: the browser interface depends on the FastAPI, TensorFlow, and YAMNet inference service. A static host would display the shell but break model loading and analysis, so no static-host manifest is included.
 
-Two suitable managed-container options are documented without provisioning an account or incurring a charge:
+Two suitable managed-container options are documented without provisioning an account or incurring a charge. Pricing and account requirements below were checked against the providers' official pages on 2026-10-05:
 
 | Option | Fit | Constraint |
 | --- | --- | --- |
-| Render Docker web service | Simple Git-based deployment, managed HTTPS and health checks | The current process reaches roughly 453 MB RSS locally after model load, leaving too little margin on a 512 MB free instance. Use at least a 2 GB plan for a reliable judging demo. |
-| Hugging Face Docker Space | Docker/FastAPI support and a familiar ML demo surface | Creating compute-backed Spaces may require a paid account plan; persistent storage and cold-start behavior must be verified. |
+| Render Docker web service | Simple Git-based deployment, managed HTTPS and health checks | The 512 MB free instance is too small. The 1 CPU / 2 GB `1c-2g` plan is currently $25/month. |
+| Hugging Face Docker Space | Docker/FastAPI support, 2 vCPU, 16 GB RAM and 50 GB ephemeral disk on CPU Basic | A personal PRO subscription is currently required to create Docker Spaces and costs $9/month. CPU Basic has no additional hourly charge but sleeps when inactive. |
+
+**Recommended hackathon target:** Hugging Face Docker Space on CPU Basic, if the account owner accepts the $9/month PRO subscription. It provides substantially more memory headroom for TensorFlow than Render `1c-2g` at a lower monthly cost. Render remains the fallback when GitHub-native deployment and fewer cold-start constraints are worth the higher price.
+
+Official references: [Hugging Face Spaces overview](https://huggingface.co/docs/hub/en/spaces-overview), [Hugging Face pricing](https://huggingface.co/pricing), [Hugging Face Docker Spaces](https://huggingface.co/docs/hub/en/spaces-sdks-docker), [Render compute plans](https://render.com/docs/compute-plans), and [Render pricing](https://render.com/pricing).
 
 `deploy/render.yaml.example` intentionally uses Render's `1c-2g` plan and is not named `render.yaml`, preventing an accidental paid-service Blueprint creation. `deploy/HUGGINGFACE_SPACE_README.example.md` contains the Docker Space front matter. The final provider and any paid plan require the account owner's explicit choice.
 

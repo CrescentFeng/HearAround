@@ -1,10 +1,10 @@
 # HearAround implementation status
 
-Updated: 2026-10-03
+Updated: 2026-10-05
 
 ## Completed
 
-- Accessible Chinese-first UI based on the approved dark, high-contrast prototype.
+- Accessible English-first UI based on the approved dark, high-contrast prototype.
 - Separate simple and technical views.
 - Familiar event pictograms instead of letter abbreviations.
 - FastAPI endpoints for health, model loading, analysis, feedback and history.
@@ -32,15 +32,18 @@ Updated: 2026-10-03
 - Provider-ready but non-activating Render and Hugging Face container examples.
 - English-first competition interface, English runtime/API messages and English `en-US` speech output.
 - Versioned front-end assets to prevent stale Chinese JavaScript from being served to judges.
+- Public MIT-licensed GitHub repository at `https://github.com/CrescentFeng/HearAround`.
+- Automated release suite passing **20/20** tests.
+- Production Docker image built successfully and verified as a healthy non-root container.
+- Containerized YAMNet smoke test: fire/smoke sample produced a critical alert with a 0.9909 product score and approximately 80 ms model inference on the local acceptance host.
 
 ## Still required before submission
 
 - Complete the user-authorized physical microphone acceptance test.
-- Complete a production image build once outbound package mirrors are reachable; the local Docker daemon is available, but the Debian/Python package network path must succeed.
 - Deploy to a managed HTTPS hostname and run the documented desktop/mobile browser matrix.
 - Build a new development expansion set for the documented doorbell and knocking failures; do not tune on the current holdout.
 - Optionally add Silero VAD and live captions after the core environment-sound MVP is stable.
-- Record the 2–3 minute demo, capture final screenshots and replace the three public-link placeholders.
+- Record the 2–3 minute demo, capture final screenshots and replace the live-demo and video placeholders.
 
 ## Product boundary
 

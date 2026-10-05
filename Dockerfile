@@ -17,7 +17,7 @@ COPY data/demo /app/data/demo
 COPY eval/demo_baseline_metrics.json eval/holdout_metrics.json eval/stream_stress_metrics.json /app/eval/
 COPY submission/PROJECT_FACTS.json /app/submission/PROJECT_FACTS.json
 
-RUN useradd --create-home --uid 10001 hearound \
+RUN useradd --create-home --uid 1000 hearound \
     && mkdir -p /app/.cache/tfhub \
     && chown -R hearound:hearound /app
 USER hearound

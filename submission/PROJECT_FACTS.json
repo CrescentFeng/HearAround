@@ -50,7 +50,7 @@
   },
   "links": {
     "live_demo": "[LIVE_DEMO_URL]",
-    "repository": "[REPOSITORY_URL]",
+    "repository": "https://github.com/CrescentFeng/HearAround",
     "demo_video": "[VIDEO_URL]"
   }
 }
