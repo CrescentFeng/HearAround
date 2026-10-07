@@ -52,7 +52,10 @@ class ApiIntegrationTests(unittest.TestCase):
         self.assertEqual(response.headers["cache-control"], "no-store")
         self.assertEqual(response.headers["x-content-type-options"], "nosniff")
         self.assertIn("microphone=(self)", response.headers["permissions-policy"])
-        self.assertIn("frame-ancestors 'none'", response.headers["content-security-policy"])
+        content_security_policy = response.headers["content-security-policy"]
+        self.assertIn("frame-ancestors https://huggingface.co", content_security_policy)
+        self.assertIn("https://*.huggingface.co", content_security_policy)
+        self.assertNotIn("frame-ancestors 'none'", content_security_policy)
 
     def test_multipart_analysis_runs_policy_and_agent(self):
         first = self.analyze()

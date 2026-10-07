@@ -1,6 +1,6 @@
 # HearAround — Important sounds, made visible
 
-> Replace `[LIVE_DEMO_URL]` and `[VIDEO_URL]` before submission.
+> The live demo is published. Replace `[VIDEO_URL]` after the demo video is uploaded.
 
 ## One-line pitch
 
@@ -112,7 +112,7 @@ Accessible AI is a communication system, not only a classifier. A modest model w
 
 ## Project links
 
-- Live demo: [LIVE_DEMO_URL]
+- Live demo: https://huggingface.co/spaces/Crescentfff/HearAround
 - Source repository: https://github.com/CrescentFeng/HearAround
 - Demo video: [VIDEO_URL]
 

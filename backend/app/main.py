@@ -39,7 +39,8 @@ async def security_and_privacy_headers(request: Request, call_next):
     response.headers["Content-Security-Policy"] = (
         "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; "
         "img-src 'self' data:; media-src 'self' blob:; connect-src 'self'; "
-        "object-src 'none'; base-uri 'none'; frame-ancestors 'none'"
+        "object-src 'none'; base-uri 'none'; "
+        "frame-ancestors https://huggingface.co https://*.huggingface.co"
     )
     if request.url.path.startswith("/api/"):
         response.headers["Cache-Control"] = "no-store"
