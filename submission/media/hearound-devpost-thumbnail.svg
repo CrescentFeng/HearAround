@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1200" viewBox="0 0 1800 1200" role="img" aria-labelledby="title desc">
+  <title id="title">HearAround — Important sounds, made visible</title>
+  <desc id="desc">A dark teal accessibility technology cover with an ear mark, sound waves, and fire alarm, car horn, and doorbell pictograms.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07171d"/>
+      <stop offset="1" stop-color="#0d2a31"/>
+    </linearGradient>
+    <linearGradient id="mint" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#76efd8"/>
+      <stop offset="1" stop-color="#35c9b2"/>
+    </linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+  </defs>
+
+  <rect width="1800" height="1200" fill="url(#bg)"/>
+  <circle cx="1450" cy="170" r="320" fill="#4ee0c1" opacity="0.055"/>
+  <circle cx="1600" cy="980" r="440" fill="#f5b84b" opacity="0.035"/>
+  <path d="M1020 155 C1510 155 1695 375 1695 600 C1695 825 1510 1045 1020 1045" fill="none" stroke="#4ee0c1" stroke-width="3" opacity="0.12"/>
+  <path d="M1095 245 C1435 245 1585 400 1585 600 C1585 800 1435 955 1095 955" fill="none" stroke="#4ee0c1" stroke-width="3" opacity="0.18"/>
+  <path d="M1165 345 C1370 345 1470 450 1470 600 C1470 750 1370 855 1165 855" fill="none" stroke="#4ee0c1" stroke-width="3" opacity="0.24"/>
+
+  <g transform="translate(120 116)">
+    <rect width="176" height="176" rx="42" fill="#123038" stroke="#29505a" stroke-width="3"/>
+    <path d="M51 92 C51 51 72 28 101 28 C130 28 151 50 151 80 C151 105 136 119 122 129 C111 137 107 147 107 159" fill="none" stroke="url(#mint)" stroke-width="18" stroke-linecap="round"/>
+    <path d="M52 120 C75 120 88 106 88 87" fill="none" stroke="#f5b84b" stroke-width="15" stroke-linecap="round"/>
+  </g>
+
+  <text x="120" y="405" fill="#f3f8f8" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="128" font-weight="750" letter-spacing="-5">HearAround</text>
+  <text x="126" y="505" fill="#66e6cd" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="31" font-weight="700" letter-spacing="8">IMPORTANT SOUNDS, MADE VISIBLE</text>
+  <text x="124" y="615" fill="#d8e6e8" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="41" font-weight="430">A safety-first environmental sound Agent</text>
+  <text x="124" y="676" fill="#d8e6e8" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="41" font-weight="430">for accessible, multimodal alerts.</text>
+
+  <g transform="translate(126 770)">
+    <rect width="656" height="182" rx="32" fill="#0f2a31" stroke="#244a54" stroke-width="3"/>
+    <circle cx="75" cy="91" r="27" fill="#4ee0c1" opacity="0.2"/>
+    <circle cx="75" cy="91" r="11" fill="#4ee0c1"/>
+    <text x="125" y="78" fill="#f3f8f8" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="34" font-weight="700">Visual first</text>
+    <text x="125" y="126" fill="#aec6ca" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="28">Pictograms · vibration · optional speech</text>
+  </g>
+
+  <g transform="translate(1040 220)">
+    <rect width="210" height="210" rx="54" fill="#172f32" stroke="#ff7878" stroke-width="4"/>
+    <path d="M105 42 C120 70 112 86 135 103 C156 119 157 153 132 170 C108 187 69 181 56 154 C44 128 57 105 74 87 C77 107 91 108 91 85 C91 68 96 53 105 42Z" fill="#ff7878"/>
+    <path d="M105 103 C119 120 124 135 115 148 C106 162 83 156 82 139 C81 126 91 116 105 103Z" fill="#f5b84b"/>
+    <text x="105" y="250" text-anchor="middle" fill="#d9e7e8" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="27" font-weight="650">FIRE ALARM</text>
+  </g>
+
+  <g transform="translate(1320 500)">
+    <rect width="210" height="210" rx="54" fill="#172f32" stroke="#f5b84b" stroke-width="4"/>
+    <path d="M47 126 L65 82 Q72 64 92 64 H130 Q148 64 157 83 L174 126 V154 H154 V171 H126 V154 H84 V171 H56 V154 H38 V126Z" fill="#f5b84b"/>
+    <rect x="76" y="82" width="70" height="30" rx="8" fill="#07171d" opacity="0.85"/>
+    <circle cx="69" cy="137" r="13" fill="#07171d"/>
+    <circle cx="145" cy="137" r="13" fill="#07171d"/>
+    <path d="M177 85 C194 94 194 116 177 125" fill="none" stroke="#76efd8" stroke-width="7" stroke-linecap="round"/>
+    <text x="105" y="250" text-anchor="middle" fill="#d9e7e8" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="27" font-weight="650">CAR HORN</text>
+  </g>
+
+  <g transform="translate(1015 790)">
+    <rect width="210" height="210" rx="54" fill="#172f32" stroke="#4ee0c1" stroke-width="4"/>
+    <path d="M72 61 H138 V169 H72Z" fill="none" stroke="#4ee0c1" stroke-width="10"/>
+    <path d="M88 80 H122 V117 H88Z" fill="#4ee0c1" opacity="0.3"/>
+    <circle cx="120" cy="141" r="7" fill="#f5b84b"/>
+    <path d="M151 84 C171 97 171 133 151 146" fill="none" stroke="#f5b84b" stroke-width="7" stroke-linecap="round"/>
+    <text x="105" y="250" text-anchor="middle" fill="#d9e7e8" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="27" font-weight="650">DOORBELL</text>
+  </g>
+
+  <g opacity="0.75">
+    <rect x="858" y="536" width="10" height="130" rx="5" fill="#4ee0c1"/>
+    <rect x="886" y="506" width="10" height="190" rx="5" fill="#4ee0c1"/>
+    <rect x="914" y="555" width="10" height="92" rx="5" fill="#4ee0c1"/>
+    <rect x="942" y="470" width="10" height="262" rx="5" fill="#4ee0c1"/>
+    <rect x="970" y="532" width="10" height="136" rx="5" fill="#4ee0c1"/>
+  </g>
+
+  <rect x="0" y="1170" width="1800" height="30" fill="#4ee0c1" opacity="0.75"/>
+</svg>

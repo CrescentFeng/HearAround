@@ -1,0 +1,27 @@
+1
+00:00:00,000 --> 00:00:18,000
+This is HearAround, an environmental-sound Agent inspired by my grandmother. As her hearing declined, everyday sounds became harder to notice. Text alone was not enough because she also finds dense reading difficult. HearAround makes important sounds visible, understandable, and optionally speakable.
+
+2
+00:00:18,000 --> 00:00:38,000
+It is designed for Deaf and hard-of-hearing users, older adults, low-literacy users, and caregivers. Raw audio is processed in memory and is not saved. Visual alerts always work; speech and vibration are optional enhancements.
+
+3
+00:00:38,000 --> 00:01:12,000
+I will use a bundled, source-linked CC0 sample so the demo is reproducible. This is not a scripted scenario button. The file is decoded, resampled to sixteen kilohertz, and analyzed by the real YAMNet AudioSet model. The result is mapped to a product event and checked by deterministic alert rules. The user receives a large pictogram, words and shape as well as color, and one short action.
+
+4
+00:01:12,000 --> 00:01:42,000
+Repeating the same event within the cooldown window records the occurrence without another vibration or spoken interruption. The technical view exposes model candidates, the matched rule, recent state, and Agent action. The Agent manages context and cooldown, but it does not freely decide whether a critical warning is real.
+
+5
+00:01:42,000 --> 00:02:02,000
+Simple mode is the primary experience. High contrast, large symbols, optional read-aloud guidance, and progressive vibration support different needs. Microphone permission is requested only after a user action, and monitoring remains visibly indicated.
+
+6
+00:02:02,000 --> 00:02:27,000
+A separate twenty-three-clip CC0 holdout produced sixty-five point two percent exact match and sixty-two point eight percent Macro-F1, with zero alerts across six difficult negatives. Two of six critical events were missed, and doorbell recall is currently zero of three. I disclose that failure because this is a prototype, not a certified safety device.
+
+7
+00:02:27,000 --> 00:02:42,000
+Next, HearAround can become a mobile app connected to a smartwatch, wristband, or bedside light, with more on-device inference and user-specific sounds. HearAround: important sounds, made visible.

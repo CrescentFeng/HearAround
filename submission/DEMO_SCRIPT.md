@@ -32,11 +32,11 @@ Target length: 2:40. Record the public HTTPS deployment in a Chromium browser at
 
 ## 1:12–1:42 — Agent behavior
 
-**On screen:** switch to technical mode. Show top candidates and the Agent decision trail. Analyze the same sample again.
+**On screen:** immediately analyze the same loaded sample a second time, then switch to technical mode. Show `Duplicate alert avoided`, the top candidates, and the Agent decision trail. Keep the second click within ten seconds of the first result so the cooldown is still active.
 
 **Voice-over:**
 
-“The technical view exposes verifiable evidence: model candidates, the matched rule, environment mode, and Agent action. The Agent manages state, feedback, and cooldown. It does not freely decide whether a critical warning is real. Repeating this event demonstrates cooldown suppression, reducing alert fatigue.”
+“Repeating the same event within the cooldown window records the occurrence without another vibration or spoken interruption. The technical view exposes verifiable evidence: model candidates, the matched rule, recent state, and Agent action. The Agent manages context and cooldown, but it does not freely decide whether a critical warning is real.”
 
 ## 1:42–2:02 — Accessibility and device behavior
 
@@ -66,6 +66,7 @@ Target length: 2:40. Record the public HTTPS deployment in a Chromium browser at
 
 - Preload YAMNet before recording so the download is not part of the video.
 - Use the bundled car-horn sample for the main inference; keep a second sample ready.
+- After the first car-horn result, press **Analyze sound** again immediately, before switching views, to guarantee the ten-second cooldown is visible.
 - Close unrelated tabs and hide private bookmarks or notifications.
 - Do not claim production readiness, medical benefit, sound direction, or certified emergency detection.
 - Keep the failure disclosure in the video; it supports technical credibility.
