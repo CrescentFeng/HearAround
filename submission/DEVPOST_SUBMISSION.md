@@ -112,7 +112,7 @@ Accessible AI is a communication system, not only a classifier. A modest model w
 
 ## Project links
 
-- Live demo: https://huggingface.co/spaces/Crescentfff/HearAround
+- Live demo: https://huggingface.co/spaces/Crescentfff/HearAround-Agent
 - Source repository: https://github.com/CrescentFeng/HearAround
 - Demo video: [VIDEO_URL]
 

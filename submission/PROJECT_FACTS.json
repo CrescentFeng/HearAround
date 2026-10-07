@@ -49,7 +49,7 @@
     "population_level_accuracy": false
   },
   "links": {
-    "live_demo": "https://huggingface.co/spaces/Crescentfff/HearAround",
+    "live_demo": "https://huggingface.co/spaces/Crescentfff/HearAround-Agent",
     "repository": "https://github.com/CrescentFeng/HearAround",
     "demo_video": null
   }
